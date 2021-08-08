@@ -16,7 +16,6 @@ findCoeff(var train, l_rate, n_epoch) {
   }
 
   for (int i = 0; i < n_epoch; i++) {
-    var sum_error = 0;
     for (int y = 0; y < train.length - 1; y++) {
       var yhat = predict(train[y], coeff);
       List temp = train[y];
@@ -32,10 +31,7 @@ findCoeff(var train, l_rate, n_epoch) {
 }
 
 logreg(var train, var test, l_rate, n_epoch) {
-  List predictions = [];
   var coeff = findCoeff(train, l_rate, n_epoch);
   var yhat = predict(test, coeff);
-  //yhat = yhat.roundToDouble();
-  predictions.add(yhat);
   return yhat;
 }
