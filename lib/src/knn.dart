@@ -32,7 +32,6 @@ List getNeighbors(List train, List test_row, int num_neighbors) {
 }
 
 Map findPopularElement(List output) {
-  List results = [];
   var map = Map();
 
   output.forEach((element) {
