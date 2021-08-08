@@ -11,6 +11,11 @@
         - ###### Coming soon!
 
 ## Example
+### Import package
+```dart
+    import 'package:dart_ml/dart_ml.dart';
+```
+
 ### Load dataset
 ```dart
     //Minimal dataset where each columns define the feature and the last row is the target class

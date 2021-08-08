@@ -1,6 +1,6 @@
 name: dart_ml
-description: A Dart package to introduce Machine Learning in your apps.
-version: 0.0.1
+description: A Dart package to leverage your apps by introducing Machine Learning to it.
+version: 0.0.2
 homepage: https://github.com/dev-Roshan-lab/dart-ml
 
 

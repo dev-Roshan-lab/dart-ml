@@ -51,6 +51,6 @@ dynamic knn(var train, var test_row, num_neighbors) {
     output_values.add((neighbors[i]).last);
   }
   var prediction = findPopularElement(
-      output_values); //TODO: find the most popular element in a list from the above function
+      output_values);
   return prediction;
 }
