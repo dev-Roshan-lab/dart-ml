@@ -1,6 +1,12 @@
 # dart_ml
 
-## Introduce machine machine learning to your dart supported apps from Android till Linux
+## Introduce machine learning to your dart supported apps from Android till Linux
+
+[![Pub Version](https://img.shields.io/pub/v/dart_ml?logo=dart&logoColor=white)](https://pub.dev/packages/dart_ml/)
+[![Pub Likes](https://badgen.net/pub/likes/dart_ml?label=pub%20likes)](https://pub.dev/packages/dart_ml/score)
+[![Pub Points](https://badgen.net/pub/points/dart_ml?label=pub%20points)](https://pub.dev/packages/dart_ml/score)
+[![Pub Popularity](https://badgen.net/pub/popularity/dart_ml?label=pub%20popularity)](https://pub.dev/packages/dart_ml/score)
+[![Flutter Platform](https://badgen.net/pub/flutter-platform/dart_ml)](https://pub.dev/packages/dart_ml/)
 
 ## Contents
 - #### Algorithms
