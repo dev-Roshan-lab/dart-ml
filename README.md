@@ -13,6 +13,8 @@
     - ##### Classification
         - [K-Nearest-Neigbor](https://github.com/dev-Roshan-lab/dart-ml/blob/main/lib/src/knn.dart) In statistics, the k-nearest neighbors algorithm (k-NN) is a non-parametric classification method
         - [Logistic Regressor](https://github.com/dev-Roshan-lab/dart-ml/blob/main/lib/src/logistic_regression.dart) Logistic regression is a supervised learning classification algorithm generally used where we have to classify the data into two or more classes
+	- ##### Forecasting
+		- [Fit straight line](https://github.com/dev-Roshan-lab/dart-ml/blob/main/lib/src/stline_forecast.dart) A statistical approach towards forecasting, where a straight line is fit on the data to perform future predictions
     - ##### Regression
         - ###### Coming soon!
 
@@ -50,6 +52,13 @@
 ```dart
     var predicted = logreg(dataset, dataset[0], 0.3, 100)); // (train, test, l_rate, n_epoch)
     print(predicted); //0, returns the predicted class
+```
+
+### Using Stline_forecast
+```dart
+    var x = [1990, 1991, 1992, 1993, 1994]; //year
+    var y = [28, 38, 46, 40, 56]; // sales for the corresponsing year
+    var predicted = stline_forecast(x, y, 1995); // 59.0 predicted sales for the year 1995
 ```
 
 ### Next Goals
