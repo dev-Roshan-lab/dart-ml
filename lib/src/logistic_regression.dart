@@ -1,6 +1,8 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'dart:math';
 
-double predict(var row, var coffecients) {
+double log_reg(var row, var coffecients) {
   var yhat = coffecients[0];
   for (int i = 0; i < row.length - 1; i++) {
     yhat += coffecients[i + 1] * row[i];
@@ -17,7 +19,7 @@ findCoeff(var train, l_rate, n_epoch) {
 
   for (int i = 0; i < n_epoch; i++) {
     for (int y = 0; y < train.length - 1; y++) {
-      var yhat = predict(train[y], coeff);
+      var yhat = log_reg(train[y], coeff);
       List temp = train[y];
       var error = train[y][temp.length - 1] - yhat;
       coeff[0] = coeff[0] + l_rate * error * yhat * (1.0 - yhat);
@@ -32,6 +34,6 @@ findCoeff(var train, l_rate, n_epoch) {
 
 logreg(var train, var test, l_rate, n_epoch) {
   var coeff = findCoeff(train, l_rate, n_epoch);
-  var yhat = predict(test, coeff);
+  var yhat = log_reg(test, coeff);
   return yhat;
 }
