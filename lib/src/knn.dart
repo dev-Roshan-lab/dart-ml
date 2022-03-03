@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'dart:math';
 
 double euclideanDistance(List row1, List row2) {
@@ -50,7 +52,6 @@ dynamic knn(var train, var test_row, num_neighbors) {
   for (var i = 0; i < neighbors.length; i++) {
     output_values.add((neighbors[i]).last);
   }
-  var prediction = findPopularElement(
-      output_values);
+  var prediction = findPopularElement(output_values);
   return prediction;
 }
