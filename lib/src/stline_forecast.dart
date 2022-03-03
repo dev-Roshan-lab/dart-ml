@@ -1,53 +1,40 @@
-dynamic stline_forecast(var x, var y, var year) {
-  int length = x.length;
-  var sumY = 0;
-  var sumX = 0;
-  var sumXSquare = 0;
-  var sumXY = 0;
-  var a;
-  var b;
-  int medianValue = x.length.isOdd
-      ? x[(length - 1) ~/ 2]
-      : (x[(length / 2) - 1] + x[(length / 2)]) / 2;
+// ignore_for_file: non_constant_identifier_names
 
-  for (var i = 0; i < length; i++) {
-    sumY = sumY + y[i] as int;
+import 'dart:math';
+
+double stline_forecast(int year, List dataset) {
+  // sum of y for coefA
+  double sum = 0;
+  for (int i = 0; i < dataset.length; i++) {
+    sum += dataset[i][1];
   }
 
-  for (var y = 0; y < length; y++) {
-    sumX = sumX + calculateX(x[y] as int, medianValue) as int;
-  }
+  // find mid element to subtract from year in each iteration
+  int midElement = dataset[dataset.length ~/ 2][0];
 
-  for (var p = 0; p < length; p++) {
-    sumXSquare = sumXSquare +
-        calculateXSquare(calculateX(x[p] as int, medianValue)) as int;
-  }
+  // sum of xy for coefB
+  double XY = 0;
+  dataset.forEach((element) {
+    XY += (element[0] - midElement) * element[1];
+  });
 
-  for (var z = 0; z < length; z++) {
-    sumXY = sumXY + calculateXY(calculateX(x[z], medianValue), y[z]) as int;
-  }
+  // sum of x^2 for coefB
+  double XSquare = 0;
+  dataset.forEach((element) {
+    XSquare += pow(element[0] - midElement, 2);
+  });
 
-  a = calculatea(sumY, length);
-  b = calculateb(sumXY, sumXSquare);
-  return (a + b * calculateX(year, medianValue));
+  double y =
+      coefA(sum, dataset.length) + (coefB(XY, XSquare) * (year - midElement));
+  return y;
 }
 
-dynamic calculateX(var x, var medianValue) {
-  return x - medianValue;
+double coefA(double y, int N) {
+  double a = y / N;
+  return a;
 }
 
-dynamic calculateXSquare(var x) {
-  return x * x;
-}
-
-dynamic calculateXY(var x, var y) {
-  return x * y;
-}
-
-double calculatea(var sumY, var length) {
-  return sumY / length;
-}
-
-double calculateb(var sumXY, var sumXSquare) {
-  return sumXY / sumXSquare;
+double coefB(double XY, double XSquare) {
+  double b = XY / XSquare;
+  return b;
 }
