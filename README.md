@@ -56,9 +56,16 @@
 
 ### Using Stline_forecast
 ```dart
-    var x = [1990, 1991, 1992, 1993, 1994]; //year
-    var y = [28, 38, 46, 40, 56]; // sales for the corresponsing year
-    var predicted = stline_forecast(x, y, 1995); // 59.0 predicted sales for the year 1995
+    List dataset = [
+	[2011, 80],
+	[2012, 90],
+	[2013, 92],
+	[2014, 83],
+	[2015, 94],
+	[2016, 99],
+	[2017, 92]
+    ];
+    var predicted = stline_forecast(dataset, 2018); // 98.0 predicted sales for the year 1995
 ```
 
 ### Next Goals
